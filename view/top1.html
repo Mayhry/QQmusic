@@ -1,0 +1,23 @@
+<ion-view>
+	<ion-content class="b-list">
+		<div class="big-img">
+			<img ng-src="{{items[0].albumpic_big}}"/>
+			<div>
+				<div>
+					<h1>巅峰榜-{{kind}}</h1>
+					<p>2016-12-15更新</p>
+					<i class="icon ion-ios-play text-center"></i>
+				</div>
+			</div>
+		</div>
+		<ul class="list">
+			<li class="item" ng-repeat="item in items" ">
+				<a href="view/detail.html?{{item.songid}}&{{item.url}}&{{item.albumpic_small}}"/>
+					<span>{{$index+1}}</span>
+					<h2 class="songname">{{item.songname}}</h2>
+					<p>{{item.singername}}</p>
+				</a>
+			</li>
+		</ul>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,8 @@
+<ion-view class="detail-v">
+	<audio controls="controls" ng-src="{{songurl}}"></audio>
+	<ion-content>
+		<ul class="lyc">
+			<li class="text-center" ng-repeat="ly in lyrics track by $index"></li>
+		</ul>
+	</ion-content>
+</ion-view>

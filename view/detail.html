@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>QQ音乐</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="../lib/ionic/css/ionic.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/index.css"/>
+		<script src="../lib/jQuery/jquery-1.10.1.min.js"></script>
+		<script src="../lib/ionic/js/ionic.bundle.min.js"></script>
+		<script src="../js/service.js"></script>
+		<script src="../js/detail.js"></script>
+	</head>
+	<body class="ly" ng-app="myApp" ng-controller="detCtrl">
+		<div class="wrap">
+			<div class="item-thumbnail-left">
+				<img ng-src="{{img}}"/>
+				<h3><span id="ti">{{songN}}</span></h3>
+				<p>{{singer}}</p>
+				<span class="icon ion-ios-play p-btn" ng-click = "clickP()"></span>
+			</div>
+			<ion-scroll>
+				<ul class="lyc">
+					<li id="line-{{$index}}" ng-repeat="ly in lyrics track by $index">{{ly}}</li>
+				</ul>			
+			</ion-scroll>
+			<div class="ly-contr">
+				<div class="oper-l">
+					<a href="#">
+						<i class="icon ion-navicon"></i>
+					</a>
+				</div>
+				<div class="oper-r">
+					<a href="#">
+						<i class="icon ion-ios-heart-outline"></i>
+					</a>
+				</div>
+				<div class="process">
+					<span>{{time.ctime}}</span>
+					<div class="pro-play">
+						<div class="p-pro"></div>
+					</div>
+					<span>{{time.ttime}}</span>
+				<audio id="audio" controls="controls" src="{{audio}}" autoplay></audio>
+				</div>
+				<div class="download">
+					<a href="#">
+						<p>免费下载这首歌</p>
+					</a>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

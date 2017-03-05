@@ -1,0 +1,36 @@
+var app = angular.module("myApp",["ionic","myCtrl","myService"]);
+app.config(["$stateProvider","$urlRouterProvider","$ionicConfigProvider",function($stateProvider,$urlRouterProvider,$ionicConfigProvider){
+	$stateProvider.state("main",{
+		templateUrl:"view/main.html",
+		abstract:true
+	}).state("main.hot",{
+		url:"/hot",
+		views:{
+			"hot":{
+				templateUrl:"view/hot.html"
+			}
+		}
+	}).state("main.top",{
+		url:"/top",
+		views:{
+			"top":{
+				templateUrl:"view/top.html",
+				controller:"topCtrl"
+			}
+		}
+	}).state("main.search",{
+		url:"/search",
+		views:{
+			"search":{
+				templateUrl:"view/search.html",
+				controller:"searchCtrl"
+			}
+		}
+	}).state("top1",{
+		url:"/top1/:id&:type",
+		templateUrl:"view/top1.html",
+		controller:"top1Ctrl"
+	})
+	$urlRouterProvider.otherwise("/hot");
+	$ionicConfigProvider.tabs.position("top");
+}])

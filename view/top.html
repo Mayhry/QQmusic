@@ -1,0 +1,15 @@
+<ion-view>
+	<ion-content class="topcon padding">
+		<ion-list ng-repeat="kind in kindList" ui-sref="top1({id:kind.kindid,type:kind.rank})">
+			<ion-item class="item-thumbnail-left toplist">
+				<img ng-src="{{kind.pagebean.songlist[0].albumpic_small}}"/>
+				<h3>巅峰榜-{{kind.rank}}</h3>
+				<p>1 <span>{{kind.pagebean.songlist[0].songname}}</span> - {{kind.pagebean.songlist[0].singername}}</p>
+				<p>2 <span>{{kind.pagebean.songlist[1].songname}}</span> - {{kind.pagebean.songlist[1].singername}}</p>
+				<p>3 <span>{{kind.pagebean.songlist[2].songname}}</span> - {{kind.pagebean.songlist[2].singername}}</p>
+				<i class="icon ion-ios-arrow-right"></i>
+			</ion-item>
+		</ion-list>
+		<p class="text-center padding" style="color: #666;">去客户端发现更多好音乐 ></p>
+	</ion-content>
+</ion-view>

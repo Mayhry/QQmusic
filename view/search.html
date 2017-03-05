@@ -1,0 +1,45 @@
+<ion-view>
+	<ion-content>
+		<form class="item-input-inset" ng-submit="getMes()">
+			<label class="input-wrap">
+				<i class="icon ion-ios-search"></i>
+				<input class="search-txt" placeholder="搜索歌曲、歌单、专辑" ng-model="song.songname" ng-focus="focus()" ng-blur="blur()"/>
+
+			</label>
+			<div class="cancel" ng-class={hide:isCancel} ng-click="clearTxt()">取消</div>
+		</form>
+		<div class="search_history" ng-class={hide:isSsl}>
+			<ul>
+				<li ng-repeat="ssl in shistoryList">
+					<i class="icon ion-ios-clock-outline"></i>
+					<p ng-click="tClick($index)">{{ssl}}</p>
+					<i class="icon ion-ios-close-empty" ng-click="del($index)"></i>
+				</li>
+			</ul>
+			<h6 class="text-center balanced" ng-click="clearAll()">清空搜索历史</h6>
+		</div>
+		<div class="hot-sea padding" ng-class={hide:!isCancel}>
+			<h3>热门搜索</h3>
+			<a href="#" class="hot-s">梦想的声音</a>
+			<a href="#">时间裂缝 李易峰</a>
+			<a href="#">伤心城市</a>
+			<a href="#">啷个哩个啷 鹏泊 </a>
+			<a href="#">LAST DANCE </a>
+			<a href="#">刀郎 </a>
+			<a href="#">放弃我 抓紧我 </a>
+			<a href="#">GIRLFRIEND </a>
+			<a href="#">经典老歌 </a>
+			
+		</div>
+		<ion-list ng-class={hide:isSongL}>
+			<ion-item class="item-icon-left search" ng-repeat="song in songs ">
+				<a href="view/detail.html?{{song.songid}}&{{song.m4a}}&{{song.albumpic_small}}"/>
+				<i class="icon ion-ios-musical-notes"></i>
+				<h3 class="songname">{{song.albumname}}</h3>
+				<p class="singer">{{song.singername}}</p>
+				</a>
+		</ion-item>
+		</ion-list>
+		
+	</ion-content>
+</ion-view>
